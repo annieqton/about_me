@@ -1,5 +1,7 @@
 'use strict';
 
+alert('Hello! We will pay a guessing game. Please answer the questions the form of yes/y or no/no.')
+
 var response1 = prompt('Does Annie live in Seattle?').toLowerCase();
 
 if(response1 === 'yes' || response1 === 'y'){

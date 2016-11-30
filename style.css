@@ -4,26 +4,26 @@
   color: white;
 }
 
-#header {
+.header {
   border: 1px dotted #383838;
   margin: 50px 0px 50px 0px;
   text-align: center;
 }
 
-#content {
+.content {
   float: left;
   position: relative;
   margin: 0px 0px 0px 30px;
   width: 70%;
 }
 
-#contact {
+.contact {
   float:right;
   position:relative;
   width: 20%;
 }
 
-#footer {
+.footer {
   float:left;
   position:relative;
   text-align: center;
