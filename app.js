@@ -1,11 +1,15 @@
 'use strict';
 
+var answerCorrect = true;
+
+
 //Greetings.
 alert('Welcome to my page!');
 //Asking user for name.
 var username = prompt('What is your name?');
 //Greet user with name. Asking to play a game.
 alert('Hi, ' + username + '. Let\'s play a guessing game. Please answer question 1 through 5 in the form of yes/y or no/n answer.')
+
 
 //Question 1
 var response1 = prompt('Does Santa live in the North Pole?').toLowerCase();
@@ -35,7 +39,7 @@ if(response2 === 'yes' || response2 === 'y'){
 var response3 = prompt('Does Santa drive?').toLowerCase();
 
 if (response3 === 'yes' || response3 === 'y'){
-  alert('Woohoo! Santa drive the reindeer sleight.');
+  alert('Woohoo! Santa drives the reindeer sleight.');
   console.log('User answered questions correctly.');
 }else if(response3 === 'no' || response3 === 'n'){
   alert('Sad face..You didn\'t get this right this time.');
@@ -99,22 +103,21 @@ while (numReindeer !== 8 && numAttempt > 0) {
 
 //Question 7. Add an Array for possible answers.   User has up to 6 tries or until get correct answer.  Alert ('correct') or ('you run out of attempts')
 
-var userInput = prompt('What\'s the name of one of Santa\'s reindeers?')
+var userInput = prompt('What\'s the name of one of Santa\'s reindeers?').toLowerCase();
 var nameReindeer = ['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Dunder','Blixen','Rudolph'].toLowerCase();
 var counter = 0;
-//add in var answerCorrect to check
 
 while (counter <5) {
-
   for (var i = 0; i < nameReindeer.length; i++) {
 
     if (userInput === nameReindeer[i]) {
       alert('You are correct. Santa\'s reindeers are: Dasher, Dancer, Prance, Vixen, Comet, Cupid, Duner, Blixen and Rudolph');
-      //answerCorrect = true;
+      counter += 1;
+      answerCorrect = true;
     } else {
       prompt('You are wrong. What\'s the name of one of Santa\'s reindeers?');
       counter += 1;
-      //answerCorrect = false;
+      answerCorrect = false;
     }
   }
 }
