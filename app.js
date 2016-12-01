@@ -19,7 +19,7 @@ if(response1 === 'yes' || response1 === 'y'){
   alert('Try to answer with a yes/y or no/n next time.');
 }
 
-//Quetion 2
+//Question 2
 var response2 = prompt('Is Santa married?').toLowerCase();
 
 if(response2 === 'yes' || response2 === 'y'){
@@ -43,7 +43,7 @@ if (response3 === 'yes' || response3 === 'y'){
   alert('Try to answer with a yes/y or no/n next time.');
 }
 
-//Quesiton 4
+//Question 4
 var response4 = prompt('Does Santa like the Grinch?').toLowerCase();
 
 if(response4 === 'yes' || response4 === 'y'){
@@ -101,19 +101,23 @@ while (numReindeer !== 8 && numAttempt > 0) {
 
 var userInput = prompt('What\'s the name of one of Santa\'s reindeers?')
 var nameReindeer = ['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Dunder','Blixen','Rudolph'].toLowerCase();
+var counter = 0;
+//add in var answerCorrect to check
 
-//I'M STUCK!!!
-for (var numNameAttempt = 0; numNameAttempt < 6; numNameAttempt++){}
+while (counter <5) {
 
-for (var i = 0; i < nameReindeer.length; i++) {
+  for (var i = 0; i < nameReindeer.length; i++) {
 
-  if (nameReindeer[i] === userInput) {
-    alert('You are correct. Santa\'s reindeers are: Dasher, Dancer, Prance, Vixen, Comet, Cupid, Duner, Blixen and Rudolph');
-  }else{
-    prompt('That was incorrect. Please try again. What\'s the name of one of Santa\'s reindeers?');
+    if (userInput === nameReindeer[i]) {
+      alert('You are correct. Santa\'s reindeers are: Dasher, Dancer, Prance, Vixen, Comet, Cupid, Duner, Blixen and Rudolph');
+      //answerCorrect = true;
+    } else {
+      prompt('You are wrong. What\'s the name of one of Santa\'s reindeers?');
+      counter += 1;
+      //answerCorrect = false;
+    }
   }
 }
-alert('You have run out of attempts.');
-
+alert('Thanks for playing. You have run out of attempts.');
 
 //Step 5: Tally up the # of correct answers.  Display message to compare it to the # of correct out of total questions.
