@@ -79,10 +79,10 @@ while (numReindeer !== 8 && numAttempt > 0) {
   if(!isNaN(numReindeer)) {
 // if the number of attempt is less than 4 times, then proceed with validating the answer.
     if(numAttempt > 0){
-// if the user input in more than 10, tell them it's too high and guess again.
+// if the user input in more than 9, tell them it's too high and guess again.
       if(numReindeer > 9) {
         alert('Your guess is too high');
-// if the user input is less than 10, tell them it's too low and guess again.
+// if the user input is less than 9, tell them it's too low and guess again.
       }else if(numReindeer < 9) {
         alert('Your guess is too low');
 // if the user input is 10, tell them it's correct.
@@ -102,8 +102,8 @@ while (numReindeer !== 8 && numAttempt > 0) {
 var userInput = prompt('What\'s the name of one of Santa\'s reindeers?')
 var nameReindeer = ['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Dunder','Blixen','Rudolph'].toLowerCase();
 
-
-//for (var numNameAttempt = 0; numNameAttempt < 6; numNameAttempt++){}
+//I'M STUCK!!!
+for (var numNameAttempt = 0; numNameAttempt < 6; numNameAttempt++){}
 
 for (var i = 0; i < nameReindeer.length; i++) {
 
@@ -113,10 +113,7 @@ for (var i = 0; i < nameReindeer.length; i++) {
     prompt('That was incorrect. Please try again. What\'s the name of one of Santa\'s reindeers?');
   }
 }
-
-//alert('You have run out of attempts.');
-
-
+alert('You have run out of attempts.');
 
 
 //Step 5: Tally up the # of correct answers.  Display message to compare it to the # of correct out of total questions.
