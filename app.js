@@ -1,4 +1,5 @@
 'use strict';
+
 //Greetings.
 alert('Welcome to my page!');
 //Asking user for name.
@@ -71,7 +72,7 @@ var numReindeer = 0;
 var numAttempt = 4;
 
 while (numReindeer !== 8 && numAttempt > 0) {
-  numReindeer = parseInt(prompt('How many reindeers does Satan have?'));
+  numReindeer = parseInt(prompt('How many reindeers does Santa have?'));
 //set number of attempts so that they are decreased by 1 each time an attempt is taken.
   numAttempt -= 1;
 
@@ -79,14 +80,14 @@ while (numReindeer !== 8 && numAttempt > 0) {
 // if the number of attempt is less than 4 times, then proceed with validating the answer.
     if(numAttempt > 0){
 // if the user input in more than 10, tell them it's too high and guess again.
-      if(numReindeer > 8) {
+      if(numReindeer > 9) {
         alert('Your guess is too high');
 // if the user input is less than 10, tell them it's too low and guess again.
-      }else if(numReindeer < 8) {
+      }else if(numReindeer < 9) {
         alert('Your guess is too low');
 // if the user input is 10, tell them it's correct.
       }else{
-        alert('Wow!!! You\'re so smart. There are 8 reindeers');
+        alert('Wow!!! You\'re so smart. There are 9 reindeers');
       }
 // if the number of attempts are more than 4 times, then alert user that no more attempts is allowed. End code.
     }else{
@@ -98,10 +99,22 @@ while (numReindeer !== 8 && numAttempt > 0) {
 
 //Question 7. Add an Array for possible answers.   User has up to 6 tries or until get correct answer.  Alert ('correct') or ('you run out of attempts')
 
-/*var nameReindeer = ['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Dunder','Blixen','Rudolph'].toLowerCase();
-var numNameAttempt = 6;*/
+var userInput = prompt('What\'s the name of one of Santa\'s reindeers?')
+var nameReindeer = ['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Dunder','Blixen','Rudolph'].toLowerCase();
 
 
+//for (var numNameAttempt = 0; numNameAttempt < 6; numNameAttempt++){}
+
+for (var i = 0; i < nameReindeer.length; i++) {
+
+  if (nameReindeer[i] === userInput) {
+    alert('You are correct. Santa\'s reindeers are: Dasher, Dancer, Prance, Vixen, Comet, Cupid, Duner, Blixen and Rudolph');
+  }else{
+    prompt('That was incorrect. Please try again. What\'s the name of one of Santa\'s reindeers?');
+  }
+}
+
+//alert('You have run out of attempts.');
 
 
 
