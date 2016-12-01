@@ -1,101 +1,109 @@
 'use strict';
+//Greetings.
+alert('Welcome to my page!');
+//Asking user for name.
+var username = prompt('What is your name?');
+//Greet user with name. Asking to play a game.
+alert('Hi, ' + username + '. Let\'s play a guessing game. Please answer question 1 through 5 in the form of yes/y or no/n answer.')
 
-/*
-alert('Hello! We will pay a guessing game. Please answer the questions the form of yes/y or no/no.')
-
-var response1 = prompt('Does Annie live in Seattle?').toLowerCase();
+//Question 1
+var response1 = prompt('Does Santa live in the North Pole?').toLowerCase();
 
 if(response1 === 'yes' || response1 === 'y'){
   alert('Correct! You\'re a star.');
   console.log('User answered question correctly');
 } else if(response1 === 'no' || response1 === 'n'){
-  alert('Boo! You answered this question incorrectly!');
+  alert('Boo! You got it wrong. Santa lives in the North Pole.');
 } else{
   alert('Try to answer with a yes/y or no/n next time.');
 }
 
-
-var response2 = prompt('Does Annie have a dog?').toLowerCase();
+//Quetion 2
+var response2 = prompt('Is Santa married?').toLowerCase();
 
 if(response2 === 'yes' || response2 === 'y'){
-  alert('Correct! Annie has a small dog');
+  alert('Horray! You got it right!');
   console.log('User answered question correctly.');
 } else if(response2 === 'no' || response2 === 'n'){
-  alert('You got it wrong! Annie has a small dog.');
+  alert('Wrong! Santa is married.');
 }else{
   alert('Try to answer with a yes/y or no/n next time.');
 }
 
-
-var response3 = prompt('Does Annie like to travel?').toLowerCase();
+//Question 3
+var response3 = prompt('Does Santa drive?').toLowerCase();
 
 if (response3 === 'yes' || response3 === 'y'){
-  alert('Woohoo! Let\'s go!');
+  alert('Woohoo! Santa drive the reindeer sleight.');
   console.log('User answered questions correctly.');
 }else if(response3 === 'no' || response3 === 'n'){
-  alert('But Annie likes to travel...sad face!');
+  alert('Sad face..You didn\'t get this right this time.');
 }else{
   alert('Try to answer with a yes/y or no/n next time.');
 }
 
-
-var response4 = prompt('Does Annie like sushi?').toLowerCase();
+//Quesiton 4
+var response4 = prompt('Does Santa like the Grinch?').toLowerCase();
 
 if(response4 === 'yes' || response4 === 'y'){
-  alert('Yes! Let\'s go get some sushi.');
-  console.log('User answered question correctly.');
+  alert('No! Santa doesn\'t like the Grinch because the Grinch stole Xmas.');
+  console.log('User did not answered question correctly.');
 }else if(response4 === 'no' || response4 === 'n'){
-  alert('You got it wrong!  Annie likes sushi.');
+  alert('You\'re correct. Santa doesn\'t like the Grinch.');
 }else{
   alert('Try to answer with a yes/y or no/n next time.');
 }
 
-
-var response5 = prompt('Does Annie like to skydive?').toLowerCase();
+//Question 5
+var response5 = prompt('Is it true that Santa only give presents to good little boys and good little girls?').toLowerCase();
 
 if(response5 === 'yes' || response5 === 'y'){
-  alert('No way!!! Annie is afraid of height');
-  console.log('User did not answer question correctly.');
+  alert('Woohoo! You must have been good this year.');
+  console.log('User answered question correctly.');
 }else if(response5 === 'no' || response5 === 'n'){
-  alert('No skydiving unless there is something wrong with the plane.');
+  alert('Wrong! Looks like somebody is getting a bag a coal this Xmas ;)');
 }else{
   alert('Try to answer with a yes/y or no/n next time');
 }
-*/
 
-//Step 3: Add a 6th question.  This takes in numeric input.  User to guess a number.  Alert "too high" or "to low".  Limit to 4 tries.
-
-
-var numState = 0;
+//Question 6. This takes in numeric input.  User to guess a number.  Alert "too high" or "to low".  Limit to 4 tries.
+var numReindeer = 0;
 var numAttempt = 4;
 
-while (numState !== 10 && numAttempt > 0) {
-  numState = parseInt(prompt('How many states has Annie traveled to?'));
+while (numReindeer !== 8 && numAttempt > 0) {
+  numReindeer = parseInt(prompt('How many reindeers does Satan have?'));
 //set number of attempts so that they are decreased by 1 each time an attempt is taken.
   numAttempt -= 1;
 
-  if(!isNaN(numState)) {
+  if(!isNaN(numReindeer)) {
 // if the number of attempt is less than 4 times, then proceed with validating the answer.
     if(numAttempt > 0){
 // if the user input in more than 10, tell them it's too high and guess again.
-      if(numState > 10) {
+      if(numReindeer > 8) {
         alert('Your guess is too high');
 // if the user input is less than 10, tell them it's too low and guess again.
-      }else if(numState < 10) {
+      }else if(numReindeer < 8) {
         alert('Your guess is too low');
 // if the user input is 10, tell them it's correct.
       }else{
-        alert('You got it');
+        alert('Wow!!! You\'re so smart. There are 8 reindeers');
       }
 // if the number of attempts are more than 4 times, then alert user that no more attempts is allowed. End code.
     }else{
-      alert('You ran out of attempts');
+      alert('Sorry. Nice try but you ran out of attempts. Let\'s go look up reindeers.');
     }
   }
 }
 
 
-//Step 4 Add a 7th question.   Add an Array ["state1", "state2", "state3", "state4"] for possible answer.   User has up to 6 tries or until get correct answer.  Alert ('correct') or ('you run out of attempts')
-//Step 5: Tally up the # of correct answers.  Display message to compare it to the # of correct out of total questions.
+//Question 7. Add an Array for possible answers.   User has up to 6 tries or until get correct answer.  Alert ('correct') or ('you run out of attempts')
 
-//var stateName = ['Washington', 'Oregon','California','New York'];
+/*var nameReindeer = ['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Dunder','Blixen','Rudolph'].toLowerCase();
+var numNameAttempt = 6;*/
+
+
+
+
+
+
+//Step 5: Tally up the # of correct answers.  Display message to compare it to the # of correct out of total questions.
