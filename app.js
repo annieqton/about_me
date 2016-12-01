@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 alert('Hello! We will pay a guessing game. Please answer the questions the form of yes/y or no/no.')
 
 var response1 = prompt('Does Annie live in Seattle?').toLowerCase();
@@ -60,3 +61,41 @@ if(response5 === 'yes' || response5 === 'y'){
 }else{
   alert('Try to answer with a yes/y or no/n next time');
 }
+*/
+
+//Step 3: Add a 6th question.  This takes in numeric input.  User to guess a number.  Alert "too high" or "to low".  Limit to 4 tries.
+
+
+var numState = 0;
+var numAttempt = 4;
+
+while (numState !== 10 && numAttempt > 0) {
+  numState = parseInt(prompt('How many states has Annie traveled to?'));
+//set number of attempts so that they are decreased by 1 each time an attempt is taken.
+  numAttempt -= 1;
+
+  if(!isNaN(numState)) {
+// if the number of attempt is less than 4 times, then proceed with validating the answer.
+    if(numAttempt > 0){
+// if the user input in more than 10, tell them it's too high and guess again.
+      if(numState > 10) {
+        alert('Your guess is too high');
+// if the user input is less than 10, tell them it's too low and guess again.
+      }else if(numState < 10) {
+        alert('Your guess is too low');
+// if the user input is 10, tell them it's correct.
+      }else{
+        alert('You got it');
+      }
+// if the number of attempts are more than 4 times, then alert user that no more attempts is allowed. End code.
+    }else{
+      alert('You ran out of attempts');
+    }
+  }
+}
+
+
+//Step 4 Add a 7th question.   Add an Array ["state1", "state2", "state3", "state4"] for possible answer.   User has up to 6 tries or until get correct answer.  Alert ('correct') or ('you run out of attempts')
+//Step 5: Tally up the # of correct answers.  Display message to compare it to the # of correct out of total questions.
+
+//var stateName = ['Washington', 'Oregon','California','New York'];
