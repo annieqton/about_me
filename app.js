@@ -12,94 +12,111 @@ alert('Hi, ' + username + '. Let\'s play a guessing game. Please answer question
 
 
 //Question 1
-var response1 = prompt('Does Santa live in the North Pole?').toLowerCase();
+function questionOne () {
+  var response1 = prompt('Does Santa live in the North Pole?').toLowerCase();
 
-if(response1 === 'yes' || response1 === 'y'){
-  alert('Correct! You\'re a star.');
-  console.log('User answered question correctly');
-} else if(response1 === 'no' || response1 === 'n'){
-  alert('Boo! You got it wrong. Santa lives in the North Pole.');
-} else{
-  alert('Try to answer with a yes/y or no/n next time.');
+  if(response1 === 'yes' || response1 === 'y'){
+    alert('Correct! You\'re a star.');
+    console.log('User answered question correctly');
+  } else if(response1 === 'no' || response1 === 'n'){
+    alert('Boo! You got it wrong. Santa lives in the North Pole.');
+  } else{
+    alert('Try to answer with a yes/y or no/n next time.');
+  }
 }
+questionOne ();
 
 //Question 2
-var response2 = prompt('Is Santa married?').toLowerCase();
+function questionTwo () {
+  var response2 = prompt('Is Santa married?').toLowerCase();
 
-if(response2 === 'yes' || response2 === 'y'){
-  alert('Horray! You got it right!');
-  console.log('User answered question correctly.');
-} else if(response2 === 'no' || response2 === 'n'){
-  alert('Wrong! Santa is married.');
-}else{
-  alert('Try to answer with a yes/y or no/n next time.');
+  if(response2 === 'yes' || response2 === 'y'){
+    alert('Horray! You got it right!');
+    console.log('User answered question correctly.');
+  } else if(response2 === 'no' || response2 === 'n'){
+    alert('Wrong! Santa is married.');
+  }else{
+    alert('Try to answer with a yes/y or no/n next time.');
+  }
 }
+questionTwo();
 
 //Question 3
-var response3 = prompt('Does Santa drive?').toLowerCase();
+function questionThree () {
+  var response3 = prompt('Does Santa drive?').toLowerCase();
 
-if (response3 === 'yes' || response3 === 'y'){
-  alert('Woohoo! Santa drives the reindeer sleight.');
-  console.log('User answered questions correctly.');
-}else if(response3 === 'no' || response3 === 'n'){
-  alert('Sad face..You didn\'t get this right this time.');
-}else{
-  alert('Try to answer with a yes/y or no/n next time.');
+  if (response3 === 'yes' || response3 === 'y'){
+    alert('Woohoo! Santa drives the reindeer sleight.');
+    console.log('User answered questions correctly.');
+  }else if(response3 === 'no' || response3 === 'n'){
+    alert('Sad face..You didn\'t get this right this time.');
+  }else{
+    alert('Try to answer with a yes/y or no/n next time.');
+  }
 }
+questionThree();
 
 //Question 4
-var response4 = prompt('Does Santa like the Grinch?').toLowerCase();
+function questionFour() {
+  var response4 = prompt('Does Santa like the Grinch?').toLowerCase();
 
-if(response4 === 'yes' || response4 === 'y'){
-  alert('No! Santa doesn\'t like the Grinch because the Grinch stole Xmas.');
-  console.log('User did not answered question correctly.');
-}else if(response4 === 'no' || response4 === 'n'){
-  alert('You\'re correct. Santa doesn\'t like the Grinch.');
-}else{
-  alert('Try to answer with a yes/y or no/n next time.');
+  if(response4 === 'yes' || response4 === 'y'){
+    alert('No! Santa doesn\'t like the Grinch because the Grinch stole Xmas.');
+    console.log('User did not answered question correctly.');
+  }else if(response4 === 'no' || response4 === 'n'){
+    alert('You\'re correct. Santa doesn\'t like the Grinch.');
+  }else{
+    alert('Try to answer with a yes/y or no/n next time.');
+  }
 }
+questionFour();
 
 //Question 5
-var response5 = prompt('Is it true that Santa only give presents to good little boys and good little girls?').toLowerCase();
+function questionFive () {
+  var response5 = prompt('Is it true that Santa only give presents to good little boys and good little girls?').toLowerCase();
 
-if(response5 === 'yes' || response5 === 'y'){
-  alert('Woohoo! You must have been good this year.');
-  console.log('User answered question correctly.');
-}else if(response5 === 'no' || response5 === 'n'){
-  alert('Wrong! Looks like somebody is getting a bag a coal this Xmas ;)');
-}else{
-  alert('Try to answer with a yes/y or no/n next time');
+  if(response5 === 'yes' || response5 === 'y'){
+    alert('Woohoo! You must have been good this year.');
+    console.log('User answered question correctly.');
+  }else if(response5 === 'no' || response5 === 'n'){
+    alert('Wrong! Looks like somebody is getting a bag a coal this Xmas ;)');
+  }else{
+    alert('Try to answer with a yes/y or no/n next time');
+  }
 }
+questionFive();
 
 //Question 6. This takes in numeric input.  User to guess a number.  Alert "too high" or "to low".  Limit to 4 tries.
 var numReindeer = 0;
 var numAttempt = 4;
 
-while (numReindeer !== 8 && numAttempt > 0) {
-  numReindeer = parseInt(prompt('How many reindeers does Santa have?'));
-//set number of attempts so that they are decreased by 1 each time an attempt is taken.
-  numAttempt -= 1;
+function questionSix () {
+  while (numReindeer !== 8 && numAttempt > 0) {
+    numReindeer = parseInt(prompt('How many reindeers does Santa have?'));
+  //set number of attempts so that they are decreased by 1 each time an attempt is taken.
+    numAttempt -= 1;
 
-  if(!isNaN(numReindeer)) {
-// if the number of attempt is less than 4 times, then proceed with validating the answer.
-    if(numAttempt > 0){
-// if the user input in more than 9, tell them it's too high and guess again.
-      if(numReindeer > 9) {
-        alert('Your guess is too high');
-// if the user input is less than 9, tell them it's too low and guess again.
-      }else if(numReindeer < 9) {
-        alert('Your guess is too low');
-// if the user input is 10, tell them it's correct.
+    if(!isNaN(numReindeer)) {
+  // if the number of attempt is less than 4 times, then proceed with validating the answer.
+      if(numAttempt > 0){
+  // if the user input in more than 9, tell them it's too high and guess again.
+        if(numReindeer > 9) {
+          alert('Your guess is too high');
+  // if the user input is less than 9, tell them it's too low and guess again.
+        }else if(numReindeer < 9) {
+          alert('Your guess is too low');
+  // if the user input is 10, tell them it's correct.
+        }else{
+          alert('Wow!!! You\'re so smart. There are 9 reindeers');
+        }
+  // if the number of attempts are more than 4 times, then alert user that no more attempts is allowed. End code.
       }else{
-        alert('Wow!!! You\'re so smart. There are 9 reindeers');
+        alert('Sorry. Nice try but you ran out of attempts. Let\'s go look up reindeers.');
       }
-// if the number of attempts are more than 4 times, then alert user that no more attempts is allowed. End code.
-    }else{
-      alert('Sorry. Nice try but you ran out of attempts. Let\'s go look up reindeers.');
     }
   }
 }
-
+questionSix();
 
 //Question 7. Add an Array for possible answers.   User has up to 6 tries or until get correct answer.  Alert ('correct') or ('you run out of attempts')
 
@@ -107,20 +124,22 @@ var userInput = prompt('What\'s the name of one of Santa\'s reindeers?').toLower
 var nameReindeer = ['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Dunder','Blixen','Rudolph'].toLowerCase();
 var counter = 0;
 
-while (counter <5) {
-  for (var i = 0; i < nameReindeer.length; i++) {
+function questionSeven () {
+  while (counter <5) {
+    for (var i = 0; i < nameReindeer.length; i++) {
 
-    if (userInput === nameReindeer[i]) {
-      alert('You are correct. Santa\'s reindeers are: Dasher, Dancer, Prance, Vixen, Comet, Cupid, Duner, Blixen and Rudolph');
-      counter += 1;
-      answerCorrect = true;
-    } else {
-      prompt('You are wrong. What\'s the name of one of Santa\'s reindeers?');
-      counter += 1;
-      answerCorrect = false;
+      if (userInput === nameReindeer[i]) {
+        alert('You are correct. Santa\'s reindeers are: Dasher, Dancer, Prance, Vixen, Comet, Cupid, Duner, Blixen and Rudolph');
+        counter += 1;
+        answerCorrect = true;
+      } else {
+        prompt('You are wrong. What\'s the name of one of Santa\'s reindeers?');
+        counter += 1;
+        answerCorrect = false;
+      }
     }
   }
+  alert('Thanks for playing. You have run out of attempts.');
 }
-alert('Thanks for playing. You have run out of attempts.');
-
+questionSeven();
 //Step 5: Tally up the # of correct answers.  Display message to compare it to the # of correct out of total questions.
