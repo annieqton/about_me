@@ -2,7 +2,6 @@
 
 var answerCorrect = true;
 
-
 //Greetings.
 alert('Welcome to my page!');
 //Asking user for name.
@@ -18,6 +17,7 @@ function questionOne () {
   if(response1 === 'yes' || response1 === 'y'){
     alert('Correct! You\'re a star.');
     console.log('User answered question correctly');
+    answerCorrect = true;
   } else if(response1 === 'no' || response1 === 'n'){
     alert('Boo! You got it wrong. Santa lives in the North Pole.');
   } else{
@@ -33,6 +33,7 @@ function questionTwo () {
   if(response2 === 'yes' || response2 === 'y'){
     alert('Horray! You got it right!');
     console.log('User answered question correctly.');
+    answerCorrect = true;
   } else if(response2 === 'no' || response2 === 'n'){
     alert('Wrong! Santa is married.');
   }else{
@@ -48,6 +49,7 @@ function questionThree () {
   if (response3 === 'yes' || response3 === 'y'){
     alert('Woohoo! Santa drives the reindeer sleight.');
     console.log('User answered questions correctly.');
+    answerCorrect = true;
   }else if(response3 === 'no' || response3 === 'n'){
     alert('Sad face..You didn\'t get this right this time.');
   }else{
@@ -63,6 +65,7 @@ function questionFour() {
   if(response4 === 'yes' || response4 === 'y'){
     alert('No! Santa doesn\'t like the Grinch because the Grinch stole Xmas.');
     console.log('User did not answered question correctly.');
+    answerCorrect = true;
   }else if(response4 === 'no' || response4 === 'n'){
     alert('You\'re correct. Santa doesn\'t like the Grinch.');
   }else{
@@ -78,6 +81,7 @@ function questionFive () {
   if(response5 === 'yes' || response5 === 'y'){
     alert('Woohoo! You must have been good this year.');
     console.log('User answered question correctly.');
+    answerCorrect = true;
   }else if(response5 === 'no' || response5 === 'n'){
     alert('Wrong! Looks like somebody is getting a bag a coal this Xmas ;)');
   }else{
@@ -108,6 +112,7 @@ function questionSix () {
   // if the user input is 10, tell them it's correct.
         }else{
           alert('Wow!!! You\'re so smart. There are 9 reindeers');
+          answerCorrect = true;
         }
   // if the number of attempts are more than 4 times, then alert user that no more attempts is allowed. End code.
       }else{
@@ -120,26 +125,38 @@ questionSix();
 
 //Question 7. Add an Array for possible answers.   User has up to 6 tries or until get correct answer.  Alert ('correct') or ('you run out of attempts')
 
-var userInput = prompt('What\'s the name of one of Santa\'s reindeers?').toLowerCase();
-var nameReindeer = ['Dasher','Dancer','Prancer','Vixen','Comet','Cupid','Dunder','Blixen','Rudolph'].toLowerCase();
+var choice = true;
+var nameReindeer = ['dasher','dancer','prancer','vixen','comet','cupid','dunder','blixen','rudolph'];
 var counter = 0;
+var totalAttempts = 6;
 
 function questionSeven () {
-  while (counter <5) {
+  while (counter <6 && choice) {
+    var userInput = prompt('What\'s the name of one of Santa\'s reindeers?').toLowerCase();
+
     for (var i = 0; i < nameReindeer.length; i++) {
 
       if (userInput === nameReindeer[i]) {
         alert('You are correct. Santa\'s reindeers are: Dasher, Dancer, Prance, Vixen, Comet, Cupid, Duner, Blixen and Rudolph');
         counter += 1;
+        choice = false;
         answerCorrect = true;
-      } else {
-        prompt('You are wrong. What\'s the name of one of Santa\'s reindeers?');
-        counter += 1;
-        answerCorrect = false;
+        break;
+        //answerCorrect = true;
       }
     }
+
+    if(userInput !== nameReindeer[i]) {
+      alert('You are wrong. You have ' + totalAttempts + ' attempts left.');
+      counter += 1;
+      totalAttempts -=1;
+        //answerCorrect = false;
+    }
   }
-  alert('Thanks for playing. You have run out of attempts.');
+  if (counter === 6){
+    alert('Thanks for playing. You have run out of attempts.');
+  }
 }
+
 questionSeven();
 //Step 5: Tally up the # of correct answers.  Display message to compare it to the # of correct out of total questions.
