@@ -1,6 +1,7 @@
 'use strict';
 
-var answerCorrect = true;
+var answerCorrect = 0;
+var totalQuestion = 7;
 
 //Greetings.
 alert('Welcome to my page!');
@@ -17,7 +18,7 @@ function questionOne () {
   if(response1 === 'yes' || response1 === 'y'){
     alert('Correct! You\'re a star.');
     console.log('User answered question correctly');
-    answerCorrect = true;
+    answerCorrect +=1;
   } else if(response1 === 'no' || response1 === 'n'){
     alert('Boo! You got it wrong. Santa lives in the North Pole.');
   } else{
@@ -33,7 +34,7 @@ function questionTwo () {
   if(response2 === 'yes' || response2 === 'y'){
     alert('Horray! You got it right!');
     console.log('User answered question correctly.');
-    answerCorrect = true;
+    answerCorrect += 1;
   } else if(response2 === 'no' || response2 === 'n'){
     alert('Wrong! Santa is married.');
   }else{
@@ -49,7 +50,7 @@ function questionThree () {
   if (response3 === 'yes' || response3 === 'y'){
     alert('Woohoo! Santa drives the reindeer sleight.');
     console.log('User answered questions correctly.');
-    answerCorrect = true;
+    answerCorrect += 1;
   }else if(response3 === 'no' || response3 === 'n'){
     alert('Sad face..You didn\'t get this right this time.');
   }else{
@@ -65,9 +66,9 @@ function questionFour() {
   if(response4 === 'yes' || response4 === 'y'){
     alert('No! Santa doesn\'t like the Grinch because the Grinch stole Xmas.');
     console.log('User did not answered question correctly.');
-    answerCorrect = true;
   }else if(response4 === 'no' || response4 === 'n'){
     alert('You\'re correct. Santa doesn\'t like the Grinch.');
+    answerCorrect += 1;
   }else{
     alert('Try to answer with a yes/y or no/n next time.');
   }
@@ -81,7 +82,7 @@ function questionFive () {
   if(response5 === 'yes' || response5 === 'y'){
     alert('Woohoo! You must have been good this year.');
     console.log('User answered question correctly.');
-    answerCorrect = true;
+    answerCorrect += 1;
   }else if(response5 === 'no' || response5 === 'n'){
     alert('Wrong! Looks like somebody is getting a bag a coal this Xmas ;)');
   }else{
@@ -95,7 +96,7 @@ var numReindeer = 0;
 var numAttempt = 4;
 
 function questionSix () {
-  while (numReindeer !== 8 && numAttempt > 0) {
+  while (numReindeer !== 9 && numAttempt > 0) {
     numReindeer = parseInt(prompt('How many reindeers does Santa have?'));
   //set number of attempts so that they are decreased by 1 each time an attempt is taken.
     numAttempt -= 1;
@@ -112,7 +113,7 @@ function questionSix () {
   // if the user input is 10, tell them it's correct.
         }else{
           alert('Wow!!! You\'re so smart. There are 9 reindeers');
-          answerCorrect = true;
+          answerCorrect += 1;
         }
   // if the number of attempts are more than 4 times, then alert user that no more attempts is allowed. End code.
       }else{
@@ -140,9 +141,8 @@ function questionSeven () {
         alert('You are correct. Santa\'s reindeers are: Dasher, Dancer, Prance, Vixen, Comet, Cupid, Duner, Blixen and Rudolph');
         counter += 1;
         choice = false;
-        answerCorrect = true;
+        answerCorrect += 1;
         break;
-        //answerCorrect = true;
       }
     }
 
@@ -150,7 +150,6 @@ function questionSeven () {
       alert('You are wrong. You have ' + totalAttempts + ' attempts left.');
       counter += 1;
       totalAttempts -=1;
-        //answerCorrect = false;
     }
   }
   if (counter === 6){
@@ -159,4 +158,6 @@ function questionSeven () {
 }
 
 questionSeven();
+
 //Step 5: Tally up the # of correct answers.  Display message to compare it to the # of correct out of total questions.
+alert('You have answered ' + answerCorrect + ' correct out of ' + totalQuestion + ' questions.');
