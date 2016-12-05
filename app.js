@@ -91,7 +91,7 @@ function questionFive () {
 }
 questionFive();
 
-//Question 6. This takes in numeric input.  User to guess a number.  Alert "too high" or "to low".  Limit to 4 tries.
+//Question 6. This takes in numeric input.  User to guess a number.  Alert "too high" or "too low".  Limit to 4 tries.
 var numReindeer = 0;
 var numAttempt = 4;
 
